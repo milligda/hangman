@@ -19,14 +19,15 @@ $(document).ready(function() {
     var correctAnswer = false;
     var lettersCorrectlyGuessed = [];
     var lettersGuessed = [];
-    var guessesRemaining = 3;
+    var guessesRemaining = 5;
     var wins = 0;
     var losses = 0;
+    var guessesStart = 5
 
 
     function newGame() {
 
-        guessesRemaining = 3;
+        guessesRemaining = guessesStart;
         lettersCorrectlyGuessed = [];
         lettersGuessed = [];
         answerArray = [];
@@ -132,24 +133,22 @@ $(document).ready(function() {
     // Start a new game when the page loads
     newGame();
 
-    // When the user enters a key, store that key and start playing
+    // When the user enters a key, store that key and start playing the game
     document.onkeyup = function(event) {
+        $("#instructions").text("You've Guessed:");
         var userGuess = event.key.toLowerCase();
         
-        // run the singlePlay function to make sure the key is valid and if it matches a letter in the game word
+        // Check that the key is valid and if it matches a letter in the game word
         singlePlay(userGuess);
         
         // after the play is run, determine if the game was won or lost
         determineNextPlay();
 
+        // display the game stats
         displayStats();
-        displayGame();
 
-        console.log(guessesRemaining);
-        console.log(lettersCorrectlyGuessed);
-        console.log(gameWord);
-        console.log(answerArray);
-        
+        // display the game board
+        displayGame();
 
     }
 });

@@ -9,6 +9,7 @@ body {
     color: #d2d2d2;
     font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
     background-color: rgb(165, 41, 41); 
+    background-position: center, center;
 }
 
 h1 {
@@ -57,12 +58,3 @@ h3 {
 }
 
 
-
-/* .opacity-background {
-    background-image: url("../images/dust_scratches.png");
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-} */

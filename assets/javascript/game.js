@@ -105,6 +105,7 @@ $(document).ready(function() {
     }
 
     function displayStats() {
+
         $("#game-stats").html(
             "<h3>Guesses Left: " + guessesRemaining + "</h3>" +
             "<h3>Wins: " + wins + "</h3>" +
@@ -135,7 +136,10 @@ $(document).ready(function() {
 
     // When the user enters a key, store that key and start playing the game
     document.onkeyup = function(event) {
+        
+        // Change the instructions from how to start to "You've Guessed:"
         $("#instructions").text("You've Guessed:");
+
         var userGuess = event.key.toLowerCase();
         
         // Check that the key is valid and if it matches a letter in the game word
